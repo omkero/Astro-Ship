@@ -7,9 +7,10 @@
 #include <algorithm>
 #include "core/window/Window.hpp"
 #include <random>
+#include <thread>
 
 Astroids::Astroids(int astroids_x, int astroids_y, int ast_width,
-                   int ast_height, std::string texture_asset_path)
+                   int ast_height, std::string texture_asset_path,  SDL_Renderer* renderer)
 {
     SDL_Window *window = Window::get_window();
     if (!window)
@@ -33,10 +34,12 @@ Astroids::Astroids(int astroids_x, int astroids_y, int ast_width,
 
     int random_height = dist_y(engine);
 
-    GenerateNewAstroid(0, dist_y(engine) + astroids_height, "right");
-    GenerateNewAstroid(0, dist_y(engine) + astroids_height, "right");
-    GenerateNewAstroid(window_width - astroids_width, dist_y(engine) + astroids_height, "left");
-    GenerateNewAstroid(window_width - astroids_width, dist_y(engine) + astroids_height, "left");
+    GenerateNewAstroid(0, dist_y(engine) + astroids_height, "right", renderer);
+    GenerateNewAstroid(0, dist_y(engine) + astroids_height, "right", renderer);
+    GenerateNewAstroid(window_width - astroids_width, dist_y(engine) + astroids_height, "left", renderer);
+    GenerateNewAstroid(window_width - astroids_width, dist_y(engine) + astroids_height, "left", renderer);
+
+    last_creation_time = std::chrono::steady_clock::now();
 };
 
 Astroids::~Astroids()
@@ -54,15 +57,21 @@ Astroids::~Astroids()
     }
 }
 
-void Astroids::Draw(Player2D &player, Text &scoore)
+void Astroids::Draw(Player2D &player, Text &scoore, float& deltaTime, SDL_Renderer* renderer)
 {
-    SDL_Renderer *renderer = Renderer::get_renderer();
-    if (!renderer)
-    {
-        std::cerr << "Renderer is null, Error from Sprite.cpp" << std::endl;
-    }
 
     SDL_Color whiteColor = {255, 255, 255, 255};
+
+    // Handle asteroid creation periodically
+    auto current_time = std::chrono::steady_clock::now();
+    auto time_since_last_creation = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - last_creation_time).count();
+        
+    if (time_since_last_creation >= asteroid_creation_interval_ms) {
+        // Create a new asteroid after the specified interval
+        GenerateNewAstroid(rand() % 640, rand() % 480, "left", renderer);
+        last_creation_time = current_time; // Reset the timer
+    }
+    
 
     for (auto &astroid : astroid_vector)
     {
@@ -119,13 +128,8 @@ void Astroids::Draw(Player2D &player, Text &scoore)
     }
 }
 
-void Astroids::GenerateNewAstroid(int x, int y, std::string direction)
+void Astroids::GenerateNewAstroid(int x, int y, std::string direction, SDL_Renderer* renderer)
 {
-    SDL_Renderer *renderer = Renderer::get_renderer();
-    if (!renderer)
-    {
-        std::cerr << "Renderer is null, Error from astroids.cpp" << std::endl;
-    }
     SDL_Rect payload_rect;
     payload_rect.x = x;
     payload_rect.y = y;
@@ -141,4 +145,16 @@ void Astroids::GenerateNewAstroid(int x, int y, std::string direction)
     payload.direction = direction;
 
     astroid_vector.push_back(payload);
+
+}
+
+// A helper function to handle the actual logic in a separate thread
+void Astroids::CreateAsteroidTask(int window_width, int window_height,std::string direction) {
+    // Generate asteroid at a set interval (100px from the top in your example)
+
+}
+
+void Astroids::RenderEverySeconds(int seconds)
+{
+ // nothing
 }

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DSDL_MAIN_HANDLED -DSDL_STATIC
 
-CXX_INCLUDES = -I/home/zurd/Desktop/Zurus-main/cmake/../include -I/home/zurd/Desktop/Zurus-main
+CXX_INCLUDES = -I/home/zurd/Desktop/Zurus/cmake/../include -I/home/zurd/Desktop/Zurus
 
 CXX_FLAGS = -std=gnu++17
 

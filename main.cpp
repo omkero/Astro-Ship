@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 
     CircleRectShape circle;
     SDL_Color color = {255, 255, 255, 255};
-    Astroids astr(0, 0, 80, 80, "assets/textures/space/astroid_gray.png");
+    Astroids astr(0, 0, 80, 80, "assets/textures/space/astroid_gray.png", renderer);
 
     SDL_Color whiteColor = {255, 255, 255, 255};
 
@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
             player.Draw();
             player.PlayerMovments(deltaTime, event);
 
-            astr.Draw(player, scoore);
+            astr.Draw(player, scoore, deltaTime, renderer);
 
             scoore.Draw(renderer);
             btn.Draw(renderer);

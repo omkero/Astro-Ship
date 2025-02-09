@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zurd/Desktop/Zurus-main
+CMAKE_SOURCE_DIR = /home/zurd/Desktop/Zurus
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zurd/Desktop/Zurus-main/build
+CMAKE_BINARY_DIR = /home/zurd/Desktop/Zurus/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/astro_ship.dir/depend.make
@@ -70,186 +70,186 @@ include CMakeFiles/astro_ship.dir/progress.make
 include CMakeFiles/astro_ship.dir/flags.make
 
 CMakeFiles/astro_ship.dir/main.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/main.cpp.o: /home/zurd/Desktop/Zurus-main/main.cpp
+CMakeFiles/astro_ship.dir/main.cpp.o: /home/zurd/Desktop/Zurus/main.cpp
 CMakeFiles/astro_ship.dir/main.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astro_ship.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/main.cpp.o -MF CMakeFiles/astro_ship.dir/main.cpp.o.d -o CMakeFiles/astro_ship.dir/main.cpp.o -c /home/zurd/Desktop/Zurus-main/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astro_ship.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/main.cpp.o -MF CMakeFiles/astro_ship.dir/main.cpp.o.d -o CMakeFiles/astro_ship.dir/main.cpp.o -c /home/zurd/Desktop/Zurus/main.cpp
 
 CMakeFiles/astro_ship.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/main.cpp > CMakeFiles/astro_ship.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/main.cpp > CMakeFiles/astro_ship.dir/main.cpp.i
 
 CMakeFiles/astro_ship.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/main.cpp -o CMakeFiles/astro_ship.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/main.cpp -o CMakeFiles/astro_ship.dir/main.cpp.s
 
 CMakeFiles/astro_ship.dir/ui/Button.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/ui/Button.cpp.o: /home/zurd/Desktop/Zurus-main/ui/Button.cpp
+CMakeFiles/astro_ship.dir/ui/Button.cpp.o: /home/zurd/Desktop/Zurus/ui/Button.cpp
 CMakeFiles/astro_ship.dir/ui/Button.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/astro_ship.dir/ui/Button.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Button.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Button.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Button.cpp.o -c /home/zurd/Desktop/Zurus-main/ui/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/astro_ship.dir/ui/Button.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Button.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Button.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Button.cpp.o -c /home/zurd/Desktop/Zurus/ui/Button.cpp
 
 CMakeFiles/astro_ship.dir/ui/Button.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/ui/Button.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/ui/Button.cpp > CMakeFiles/astro_ship.dir/ui/Button.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/ui/Button.cpp > CMakeFiles/astro_ship.dir/ui/Button.cpp.i
 
 CMakeFiles/astro_ship.dir/ui/Button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/ui/Button.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/ui/Button.cpp -o CMakeFiles/astro_ship.dir/ui/Button.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/ui/Button.cpp -o CMakeFiles/astro_ship.dir/ui/Button.cpp.s
 
 CMakeFiles/astro_ship.dir/ui/Text.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/ui/Text.cpp.o: /home/zurd/Desktop/Zurus-main/ui/Text.cpp
+CMakeFiles/astro_ship.dir/ui/Text.cpp.o: /home/zurd/Desktop/Zurus/ui/Text.cpp
 CMakeFiles/astro_ship.dir/ui/Text.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astro_ship.dir/ui/Text.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Text.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Text.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Text.cpp.o -c /home/zurd/Desktop/Zurus-main/ui/Text.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astro_ship.dir/ui/Text.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Text.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Text.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Text.cpp.o -c /home/zurd/Desktop/Zurus/ui/Text.cpp
 
 CMakeFiles/astro_ship.dir/ui/Text.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/ui/Text.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/ui/Text.cpp > CMakeFiles/astro_ship.dir/ui/Text.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/ui/Text.cpp > CMakeFiles/astro_ship.dir/ui/Text.cpp.i
 
 CMakeFiles/astro_ship.dir/ui/Text.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/ui/Text.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/ui/Text.cpp -o CMakeFiles/astro_ship.dir/ui/Text.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/ui/Text.cpp -o CMakeFiles/astro_ship.dir/ui/Text.cpp.s
 
 CMakeFiles/astro_ship.dir/ui/Display.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/ui/Display.cpp.o: /home/zurd/Desktop/Zurus-main/ui/Display.cpp
+CMakeFiles/astro_ship.dir/ui/Display.cpp.o: /home/zurd/Desktop/Zurus/ui/Display.cpp
 CMakeFiles/astro_ship.dir/ui/Display.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/astro_ship.dir/ui/Display.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Display.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Display.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Display.cpp.o -c /home/zurd/Desktop/Zurus-main/ui/Display.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/astro_ship.dir/ui/Display.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/ui/Display.cpp.o -MF CMakeFiles/astro_ship.dir/ui/Display.cpp.o.d -o CMakeFiles/astro_ship.dir/ui/Display.cpp.o -c /home/zurd/Desktop/Zurus/ui/Display.cpp
 
 CMakeFiles/astro_ship.dir/ui/Display.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/ui/Display.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/ui/Display.cpp > CMakeFiles/astro_ship.dir/ui/Display.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/ui/Display.cpp > CMakeFiles/astro_ship.dir/ui/Display.cpp.i
 
 CMakeFiles/astro_ship.dir/ui/Display.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/ui/Display.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/ui/Display.cpp -o CMakeFiles/astro_ship.dir/ui/Display.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/ui/Display.cpp -o CMakeFiles/astro_ship.dir/ui/Display.cpp.s
 
 CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: /home/zurd/Desktop/Zurus-main/objects/Sprite.cpp
+CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: /home/zurd/Desktop/Zurus/objects/Sprite.cpp
 CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o -c /home/zurd/Desktop/Zurus-main/objects/Sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o -c /home/zurd/Desktop/Zurus/objects/Sprite.cpp
 
 CMakeFiles/astro_ship.dir/objects/Sprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/objects/Sprite.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/objects/Sprite.cpp > CMakeFiles/astro_ship.dir/objects/Sprite.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/objects/Sprite.cpp > CMakeFiles/astro_ship.dir/objects/Sprite.cpp.i
 
 CMakeFiles/astro_ship.dir/objects/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/objects/Sprite.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/objects/Sprite.cpp -o CMakeFiles/astro_ship.dir/objects/Sprite.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/objects/Sprite.cpp -o CMakeFiles/astro_ship.dir/objects/Sprite.cpp.s
 
 CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o: /home/zurd/Desktop/Zurus-main/objects/enemy/astroids.cpp
+CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o: /home/zurd/Desktop/Zurus/objects/enemy/astroids.cpp
 CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o -MF CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o -c /home/zurd/Desktop/Zurus-main/objects/enemy/astroids.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o -MF CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.o -c /home/zurd/Desktop/Zurus/objects/enemy/astroids.cpp
 
 CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/objects/enemy/astroids.cpp > CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/objects/enemy/astroids.cpp > CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.i
 
 CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/objects/enemy/astroids.cpp -o CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/objects/enemy/astroids.cpp -o CMakeFiles/astro_ship.dir/objects/enemy/astroids.cpp.s
 
 CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o: /home/zurd/Desktop/Zurus-main/objects/Shapes/CircleRectShape.cpp
+CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o: /home/zurd/Desktop/Zurus/objects/Shapes/CircleRectShape.cpp
 CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o -c /home/zurd/Desktop/Zurus-main/objects/Shapes/CircleRectShape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.o -c /home/zurd/Desktop/Zurus/objects/Shapes/CircleRectShape.cpp
 
 CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/objects/Shapes/CircleRectShape.cpp > CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/objects/Shapes/CircleRectShape.cpp > CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.i
 
 CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/objects/Shapes/CircleRectShape.cpp -o CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/objects/Shapes/CircleRectShape.cpp -o CMakeFiles/astro_ship.dir/objects/Shapes/CircleRectShape.cpp.s
 
 CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o: /home/zurd/Desktop/Zurus-main/objects/Shapes/RectangleShape.cpp
+CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o: /home/zurd/Desktop/Zurus/objects/Shapes/RectangleShape.cpp
 CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o -c /home/zurd/Desktop/Zurus-main/objects/Shapes/RectangleShape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o -MF CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.o -c /home/zurd/Desktop/Zurus/objects/Shapes/RectangleShape.cpp
 
 CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/objects/Shapes/RectangleShape.cpp > CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/objects/Shapes/RectangleShape.cpp > CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.i
 
 CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/objects/Shapes/RectangleShape.cpp -o CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/objects/Shapes/RectangleShape.cpp -o CMakeFiles/astro_ship.dir/objects/Shapes/RectangleShape.cpp.s
 
 CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o: /home/zurd/Desktop/Zurus-main/objects/player2D/Player2D.cpp
+CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o: /home/zurd/Desktop/Zurus/objects/player2D/Player2D.cpp
 CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o -MF CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o -c /home/zurd/Desktop/Zurus-main/objects/player2D/Player2D.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o -MF CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o.d -o CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.o -c /home/zurd/Desktop/Zurus/objects/player2D/Player2D.cpp
 
 CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/objects/player2D/Player2D.cpp > CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/objects/player2D/Player2D.cpp > CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.i
 
 CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/objects/player2D/Player2D.cpp -o CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/objects/player2D/Player2D.cpp -o CMakeFiles/astro_ship.dir/objects/player2D/Player2D.cpp.s
 
 CMakeFiles/astro_ship.dir/core/window/Window.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/core/window/Window.cpp.o: /home/zurd/Desktop/Zurus-main/core/window/Window.cpp
+CMakeFiles/astro_ship.dir/core/window/Window.cpp.o: /home/zurd/Desktop/Zurus/core/window/Window.cpp
 CMakeFiles/astro_ship.dir/core/window/Window.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/astro_ship.dir/core/window/Window.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/window/Window.cpp.o -MF CMakeFiles/astro_ship.dir/core/window/Window.cpp.o.d -o CMakeFiles/astro_ship.dir/core/window/Window.cpp.o -c /home/zurd/Desktop/Zurus-main/core/window/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/astro_ship.dir/core/window/Window.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/window/Window.cpp.o -MF CMakeFiles/astro_ship.dir/core/window/Window.cpp.o.d -o CMakeFiles/astro_ship.dir/core/window/Window.cpp.o -c /home/zurd/Desktop/Zurus/core/window/Window.cpp
 
 CMakeFiles/astro_ship.dir/core/window/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/core/window/Window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/core/window/Window.cpp > CMakeFiles/astro_ship.dir/core/window/Window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/core/window/Window.cpp > CMakeFiles/astro_ship.dir/core/window/Window.cpp.i
 
 CMakeFiles/astro_ship.dir/core/window/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/core/window/Window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/core/window/Window.cpp -o CMakeFiles/astro_ship.dir/core/window/Window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/core/window/Window.cpp -o CMakeFiles/astro_ship.dir/core/window/Window.cpp.s
 
 CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o: /home/zurd/Desktop/Zurus-main/core/renderer/Renderer.cpp
+CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o: /home/zurd/Desktop/Zurus/core/renderer/Renderer.cpp
 CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o -MF CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o.d -o CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o -c /home/zurd/Desktop/Zurus-main/core/renderer/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o -MF CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o.d -o CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.o -c /home/zurd/Desktop/Zurus/core/renderer/Renderer.cpp
 
 CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/core/renderer/Renderer.cpp > CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/core/renderer/Renderer.cpp > CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.i
 
 CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/core/renderer/Renderer.cpp -o CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/core/renderer/Renderer.cpp -o CMakeFiles/astro_ship.dir/core/renderer/Renderer.cpp.s
 
 CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o: /home/zurd/Desktop/Zurus-main/core/physics/detections.cpp
+CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o: /home/zurd/Desktop/Zurus/core/physics/detections.cpp
 CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o -MF CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o.d -o CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o -c /home/zurd/Desktop/Zurus-main/core/physics/detections.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o -MF CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o.d -o CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o -c /home/zurd/Desktop/Zurus/core/physics/detections.cpp
 
 CMakeFiles/astro_ship.dir/core/physics/detections.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/core/physics/detections.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/core/physics/detections.cpp > CMakeFiles/astro_ship.dir/core/physics/detections.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/core/physics/detections.cpp > CMakeFiles/astro_ship.dir/core/physics/detections.cpp.i
 
 CMakeFiles/astro_ship.dir/core/physics/detections.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/core/physics/detections.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/core/physics/detections.cpp -o CMakeFiles/astro_ship.dir/core/physics/detections.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/core/physics/detections.cpp -o CMakeFiles/astro_ship.dir/core/physics/detections.cpp.s
 
 CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o: CMakeFiles/astro_ship.dir/flags.make
-CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o: /home/zurd/Desktop/Zurus-main/maps/SpaceBackground.cpp
+CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o: /home/zurd/Desktop/Zurus/maps/SpaceBackground.cpp
 CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o: CMakeFiles/astro_ship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o -MF CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o.d -o CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o -c /home/zurd/Desktop/Zurus-main/maps/SpaceBackground.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o -MF CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o.d -o CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o -c /home/zurd/Desktop/Zurus/maps/SpaceBackground.cpp
 
 CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus-main/maps/SpaceBackground.cpp > CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zurd/Desktop/Zurus/maps/SpaceBackground.cpp > CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.i
 
 CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus-main/maps/SpaceBackground.cpp -o CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zurd/Desktop/Zurus/maps/SpaceBackground.cpp -o CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.s
 
 # Object files for target astro_ship
 astro_ship_OBJECTS = \
@@ -285,7 +285,7 @@ astro_ship: CMakeFiles/astro_ship.dir/core/physics/detections.cpp.o
 astro_ship: CMakeFiles/astro_ship.dir/maps/SpaceBackground.cpp.o
 astro_ship: CMakeFiles/astro_ship.dir/build.make
 astro_ship: CMakeFiles/astro_ship.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zurd/Desktop/Zurus-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable astro_ship"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zurd/Desktop/Zurus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable astro_ship"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/astro_ship.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -297,6 +297,6 @@ CMakeFiles/astro_ship.dir/clean:
 .PHONY : CMakeFiles/astro_ship.dir/clean
 
 CMakeFiles/astro_ship.dir/depend:
-	cd /home/zurd/Desktop/Zurus-main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zurd/Desktop/Zurus-main /home/zurd/Desktop/Zurus-main /home/zurd/Desktop/Zurus-main/build /home/zurd/Desktop/Zurus-main/build /home/zurd/Desktop/Zurus-main/build/CMakeFiles/astro_ship.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/zurd/Desktop/Zurus/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zurd/Desktop/Zurus /home/zurd/Desktop/Zurus /home/zurd/Desktop/Zurus/build /home/zurd/Desktop/Zurus/build /home/zurd/Desktop/Zurus/build/CMakeFiles/astro_ship.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/astro_ship.dir/depend
 

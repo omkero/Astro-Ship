@@ -1,15 +1,14 @@
 CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: \
- /home/zurd/Desktop/Zurus-main/objects/Sprite.cpp \
- /usr/include/stdc-predef.h \
- /home/zurd/Desktop/Zurus-main/objects/Sprite.h \
- /home/zurd/Desktop/Zurus-main/include/SDL.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_main.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_stdinc.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_config.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_platform.h \
- /home/zurd/Desktop/Zurus-main/include/begin_code.h \
- /home/zurd/Desktop/Zurus-main/include/close_code.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_config_minimal.h \
+ /home/zurd/Desktop/Zurus/objects/Sprite.cpp /usr/include/stdc-predef.h \
+ /home/zurd/Desktop/Zurus/objects/Sprite.h \
+ /home/zurd/Desktop/Zurus/include/SDL.h \
+ /home/zurd/Desktop/Zurus/include/SDL_main.h \
+ /home/zurd/Desktop/Zurus/include/SDL_stdinc.h \
+ /home/zurd/Desktop/Zurus/include/SDL_config.h \
+ /home/zurd/Desktop/Zurus/include/SDL_platform.h \
+ /home/zurd/Desktop/Zurus/include/begin_code.h \
+ /home/zurd/Desktop/Zurus/include/close_code.h \
+ /home/zurd/Desktop/Zurus/include/SDL_config_minimal.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -28,20 +27,20 @@ CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_assert.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_atomic.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_audio.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_error.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_endian.h /usr/include/endian.h \
+ /home/zurd/Desktop/Zurus/include/SDL_assert.h \
+ /home/zurd/Desktop/Zurus/include/SDL_atomic.h \
+ /home/zurd/Desktop/Zurus/include/SDL_audio.h \
+ /home/zurd/Desktop/Zurus/include/SDL_error.h \
+ /home/zurd/Desktop/Zurus/include/SDL_endian.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_mutex.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_thread.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_rwops.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_clipboard.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_cpuinfo.h \
+ /home/zurd/Desktop/Zurus/include/SDL_mutex.h \
+ /home/zurd/Desktop/Zurus/include/SDL_thread.h \
+ /home/zurd/Desktop/Zurus/include/SDL_rwops.h \
+ /home/zurd/Desktop/Zurus/include/SDL_clipboard.h \
+ /home/zurd/Desktop/Zurus/include/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
@@ -76,40 +75,40 @@ CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/13/bits/std_abs.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_events.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_video.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_pixels.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_rect.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_surface.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_blendmode.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_keyboard.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_keycode.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_scancode.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_mouse.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_joystick.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_guid.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_gamecontroller.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_sensor.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_quit.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_gesture.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_touch.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_filesystem.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_haptic.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_hidapi.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_hints.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_loadso.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_log.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_messagebox.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_metal.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_power.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_render.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_shape.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_system.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_timer.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_version.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_locale.h \
- /home/zurd/Desktop/Zurus-main/include/SDL_misc.h \
- /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
+ /home/zurd/Desktop/Zurus/include/SDL_events.h \
+ /home/zurd/Desktop/Zurus/include/SDL_video.h \
+ /home/zurd/Desktop/Zurus/include/SDL_pixels.h \
+ /home/zurd/Desktop/Zurus/include/SDL_rect.h \
+ /home/zurd/Desktop/Zurus/include/SDL_surface.h \
+ /home/zurd/Desktop/Zurus/include/SDL_blendmode.h \
+ /home/zurd/Desktop/Zurus/include/SDL_keyboard.h \
+ /home/zurd/Desktop/Zurus/include/SDL_keycode.h \
+ /home/zurd/Desktop/Zurus/include/SDL_scancode.h \
+ /home/zurd/Desktop/Zurus/include/SDL_mouse.h \
+ /home/zurd/Desktop/Zurus/include/SDL_joystick.h \
+ /home/zurd/Desktop/Zurus/include/SDL_guid.h \
+ /home/zurd/Desktop/Zurus/include/SDL_gamecontroller.h \
+ /home/zurd/Desktop/Zurus/include/SDL_sensor.h \
+ /home/zurd/Desktop/Zurus/include/SDL_quit.h \
+ /home/zurd/Desktop/Zurus/include/SDL_gesture.h \
+ /home/zurd/Desktop/Zurus/include/SDL_touch.h \
+ /home/zurd/Desktop/Zurus/include/SDL_filesystem.h \
+ /home/zurd/Desktop/Zurus/include/SDL_haptic.h \
+ /home/zurd/Desktop/Zurus/include/SDL_hidapi.h \
+ /home/zurd/Desktop/Zurus/include/SDL_hints.h \
+ /home/zurd/Desktop/Zurus/include/SDL_loadso.h \
+ /home/zurd/Desktop/Zurus/include/SDL_log.h \
+ /home/zurd/Desktop/Zurus/include/SDL_messagebox.h \
+ /home/zurd/Desktop/Zurus/include/SDL_metal.h \
+ /home/zurd/Desktop/Zurus/include/SDL_power.h \
+ /home/zurd/Desktop/Zurus/include/SDL_render.h \
+ /home/zurd/Desktop/Zurus/include/SDL_shape.h \
+ /home/zurd/Desktop/Zurus/include/SDL_system.h \
+ /home/zurd/Desktop/Zurus/include/SDL_timer.h \
+ /home/zurd/Desktop/Zurus/include/SDL_version.h \
+ /home/zurd/Desktop/Zurus/include/SDL_locale.h \
+ /home/zurd/Desktop/Zurus/include/SDL_misc.h /usr/include/c++/13/string \
+ /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
@@ -211,9 +210,9 @@ CMakeFiles/astro_ship.dir/objects/Sprite.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/zurd/Desktop/Zurus-main/core/renderer/Renderer.hpp \
- /home/zurd/Desktop/Zurus-main/include/SDL_image.h \
- /home/zurd/Desktop/Zurus-main/include/SDL.h /usr/include/c++/13/thread \
+ /home/zurd/Desktop/Zurus/core/renderer/Renderer.hpp \
+ /home/zurd/Desktop/Zurus/include/SDL_image.h \
+ /home/zurd/Desktop/Zurus/include/SDL.h /usr/include/c++/13/thread \
  /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
