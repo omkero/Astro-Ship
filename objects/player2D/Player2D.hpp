@@ -48,8 +48,8 @@ private:
     int pos_y_clicked = 0;
 
     int player_speed = 200;
-    int bullet_height = 50;
-    int bullet_width = 50;
+    int bullet_height = 40;
+    int bullet_width = 40;
     int bullet_speed = 25;
 
     SDL_Texture *player_texture;

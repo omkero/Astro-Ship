@@ -151,33 +151,41 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime,  bool& isMainMe
 
     SDL_Color color = {255, 255, 255, 255};
 
-    // Event to fire a bullet
     if (event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT)
     {
-        // Set the initial position of the bullet based on the player's position
-        int bullet_x_pos = player_rect.x - 15;
-        int bullet_y_pos = player_rect.y - 10;
-
+        // Get player's center (assuming the player's head is at the center-top)
+        float player_center_x = player_rect.x + (player_rect.w / 2);
+        float player_center_y = player_rect.y;  // Head position (top of the player)
+    
         int mouseX, mouseY;
         SDL_GetMouseState(&mouseX, &mouseY);
-
-        // Calculate the direction vector to the mouse position
+    
+        // Convert angle to radians
+        float angle_rad = angle * (M_PI / 180.0);
+    
+        // Adjust bullet starting position based on player's rotation
+        float bullet_x_pos = player_center_x + cos(angle_rad) * 20; // Offset from player
+        float bullet_y_pos = player_center_y + sin(angle_rad) * 20; // Offset from player
+    
+        // Calculate direction to mouse
         float dx = mouseX - bullet_x_pos;
         float dy = mouseY - bullet_y_pos;
-
-        // Normalize the direction vector and scale by bullet speed
+    
+        // Normalize direction vector
         float distance = sqrt(dx * dx + dy * dy);
+        if (distance == 0) return; // Avoid division by zero
+    
         float vx = (dx / distance) * bullet_speed;
         float vy = (dy / distance) * bullet_speed;
-
+    
         // Define the bullet's rectangle
-        SDL_Rect bullet_rect = {bullet_x_pos, bullet_y_pos, bullet_width, bullet_height};
+        SDL_Rect bullet_rect = {static_cast<int>(bullet_x_pos), static_cast<int>(bullet_y_pos), bullet_width, bullet_height};
         Bullet bt(bullet_rect, vx, vy, bt_texture, bt_surface);
-
-        // Add the bullet to the vector with its velocity
+    
+        // Add bullet to the vector
         bullets.push_back(bt);
-        //   std::cout << "Bullet fired!" << std::endl;
     }
+    
 }
 
 void Player2D::PlayerMovments(float &deltaTime, SDL_Event &event)

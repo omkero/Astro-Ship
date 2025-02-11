@@ -1,0 +1,10 @@
+^C:\USERS\ZURD\DESKTOP\ZURUS\BUILD\CMAKEFILES\504750BBA3BE1DE8EBA460551207CE88\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/zurd/Desktop/Zurus -BC:/Users/zurd/Desktop/Zurus/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/zurd/Desktop/Zurus/build/astro_ship.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

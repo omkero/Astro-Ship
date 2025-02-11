@@ -66,6 +66,7 @@
         "map": "cpp",
         "xtree": "cpp",
         "random": "cpp",
-        "sdl_gfxblitfunc.h": "c"
+        "sdl_gfxblitfunc.h": "c",
+        "mutex": "cpp"
     }
 }

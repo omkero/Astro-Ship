@@ -1,0 +1,13 @@
+C:\Users\zurd\Desktop\Zurus\main.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\main.obj
+C:\Users\zurd\Desktop\Zurus\ui\Button.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Button.obj
+C:\Users\zurd\Desktop\Zurus\ui\Text.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Text.obj
+C:\Users\zurd\Desktop\Zurus\ui\Display.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Display.obj
+C:\Users\zurd\Desktop\Zurus\objects\Sprite.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Sprite.obj
+C:\Users\zurd\Desktop\Zurus\objects\enemy\astroids.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\astroids.obj
+C:\Users\zurd\Desktop\Zurus\objects\Shapes\CircleRectShape.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\CircleRectShape.obj
+C:\Users\zurd\Desktop\Zurus\objects\Shapes\RectangleShape.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\RectangleShape.obj
+C:\Users\zurd\Desktop\Zurus\objects\player2D\Player2D.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Player2D.obj
+C:\Users\zurd\Desktop\Zurus\core\window\Window.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Window.obj
+C:\Users\zurd\Desktop\Zurus\core\renderer\Renderer.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\Renderer.obj
+C:\Users\zurd\Desktop\Zurus\core\physics\detections.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\detections.obj
+C:\Users\zurd\Desktop\Zurus\maps\SpaceBackground.cpp;C:\Users\zurd\Desktop\Zurus\build\astro_ship.dir\Release\SpaceBackground.obj
