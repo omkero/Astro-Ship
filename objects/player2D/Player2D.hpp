@@ -7,6 +7,7 @@
 #include "maps/SpaceBackground.hpp"
 #include <vector>
 #include "core/renderer/Renderer.hpp"
+#include <chrono>
 
 struct Bullet
 {
@@ -52,6 +53,9 @@ private:
     int pos_x_clicked = 0;
     int pos_y_clicked = 0;
 
+    std::chrono::steady_clock::time_point last_creation_time;
+    int interval_ms = 300; // 1000ms (1 second)
+    
     int player_alpha = 255;
     int player_speed = 200;
     int bullet_height = 40;

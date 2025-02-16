@@ -58,6 +58,8 @@ Player2D::Player2D(int sprite_x, int sprite_y, int sprite_width, int sprite_heig
     health.y = 37;
     health.h = 15;
     health.w = health_num;
+
+    last_creation_time = std::chrono::steady_clock::now();
 }
 
 Player2D::~Player2D()
@@ -93,14 +95,13 @@ void Player2D::Draw()
     {
         std::cerr << "[ERROR] SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
     }
-    SDL_Color health_color = {255,255,255,255};
+    SDL_Color health_color = {255, 255, 255, 255};
 
-    SDL_SetRenderDrawColor(renderer,health_color.r, health_color.g, health_color.b, health_color.a);
+    SDL_SetRenderDrawColor(renderer, health_color.r, health_color.g, health_color.b, health_color.a);
     SDL_RenderFillRect(renderer, &healt_border);
 
-
     health.w = health_num;
-    SDL_SetRenderDrawColor(renderer,255, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderFillRect(renderer, &health);
 }
 
@@ -109,7 +110,7 @@ bool isDown = false;
 bool isRight = false;
 bool isLeft = false;
 
-void Player2D::player_events(SDL_Event &event, float &deltaTime,  bool& isMainMenu)
+void Player2D::player_events(SDL_Event &event, float &deltaTime, bool &isMainMenu)
 {
     SDL_Renderer *renderer = Renderer::get_renderer();
     if (!renderer)
@@ -132,8 +133,6 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime,  bool& isMainMe
     int window_height;
 
     SDL_GetWindowSize(window, &window_width, &window_height);
-
-
 
     // let the sprite follow your mouse cursor only when the mouse is moving
     if (event.type == SDL_MOUSEMOTION)
@@ -162,37 +161,37 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime,  bool& isMainMe
     {
         // Get player's center (assuming the player's head is at the center-top)
         float player_center_x = player_rect.x + (player_rect.w / 2);
-        float player_center_y = player_rect.y;  // Head position (top of the player)
-    
+        float player_center_y = player_rect.y; // Head position (top of the player)
+
         int mouseX, mouseY;
         SDL_GetMouseState(&mouseX, &mouseY);
-    
+
         // Convert angle to radians
         float angle_rad = angle * (M_PI / 180.0);
-    
+
         // Adjust bullet starting position based on player's rotation
         float bullet_x_pos = player_center_x + cos(angle_rad) * 20; // Offset from player
         float bullet_y_pos = player_center_y + sin(angle_rad) * 20; // Offset from player
-    
+
         // Calculate direction to mouse
         float dx = mouseX - bullet_x_pos;
         float dy = mouseY - bullet_y_pos;
-    
+
         // Normalize direction vector
         float distance = sqrt(dx * dx + dy * dy);
-        if (distance == 0) return; // Avoid division by zero
-    
+        if (distance == 0)
+            return; // Avoid division by zero
+
         float vx = (dx / distance) * bullet_speed;
         float vy = (dy / distance) * bullet_speed;
-    
+
         // Define the bullet's rectangle
         SDL_Rect bullet_rect = {static_cast<int>(bullet_x_pos), static_cast<int>(bullet_y_pos), bullet_width, bullet_height};
         Bullet bt(bullet_rect, vx, vy, bt_texture, bt_surface);
-    
+
         // Add bullet to the vector
         bullets.push_back(bt);
     }
-    
 }
 
 void Player2D::PlayerMovments(float &deltaTime, SDL_Event &event)
@@ -265,14 +264,24 @@ void Player2D::PlayerMovments(float &deltaTime, SDL_Event &event)
     }
 }
 
-
-SDL_Rect Player2D::get_player_rect() {
+SDL_Rect Player2D::get_player_rect()
+{
     return this->player_rect;
 }
 
-void Player2D::HitByAstroidHandler() {
-    health_num -= hit_health_value;
+void Player2D::HitByAstroidHandler()
+{
+    if (this->health_num >= 1)
+    {
+        health_num -= hit_health_value;
 
-    // just try to play opacity animation three times
-    SDL_SetTextureAlphaMod(player_texture, 128); // 50% opacity
+        // reduce texture alpgha (opacity) to 64
+        SDL_SetTextureAlphaMod(player_texture, 40);
+
+        std::thread([&]()
+                    {
+            std::this_thread::sleep_for(std::chrono::microseconds(200));
+            SDL_SetTextureAlphaMod(player_texture, 255); })
+            .detach();
+    }
 }

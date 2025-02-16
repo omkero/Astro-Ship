@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     Button btn(btnWidth, btnHeight, resize_win_width - btnWidth - 15, 10, renderer, btn_text1); // Button size and position
     btn.SetColor(68, 65, 66, 255);
 
-    Player2D player(100, 100, 70, 70, "assets/textures/space/gray_ship.png");
+    Player2D player((resize_win_width / 2) - 35, (resize_win_height / 2) - 35, 70, 70, "assets/textures/space/gray_ship.png");
 
     SpaceBackground backgroundClass;
 
@@ -110,7 +110,9 @@ int main(int argc, char *argv[])
 
     bool quit = true;
     bool isMainMenu = false;
+    bool isGameOver = false;
     bool blockEvents = false;
+
     float angle = 0.0f;
     Uint32 lastFrameTime = SDL_GetTicks();
 
@@ -139,7 +141,7 @@ int main(int argc, char *argv[])
                 continue;
             }
 
-            if (isMainMenu == false)
+            if (isMainMenu == false && isGameOver == false)
             {
 
                 player.player_events(event, deltaTime, isMainMenu);
@@ -164,8 +166,6 @@ int main(int argc, char *argv[])
 
             player.Draw();
             player.PlayerMovments(deltaTime, event);
-
- 
 
             scoore.Draw(renderer);
             btn.Draw(renderer);

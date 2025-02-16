@@ -79,10 +79,7 @@ void Astroids::Draw(Player2D &player, Text &scoore, float &deltaTime, SDL_Render
     {
         if (Detections::isColiding(player.get_player_rect(), asteroid_it.astroid_rect))
         {
-            if (player.health_num >= 1)
-            {
-                player.HitByAstroidHandler();
-            }
+            player.HitByAstroidHandler();
         }
         if (asteroid_it.direction == "right")
         {
