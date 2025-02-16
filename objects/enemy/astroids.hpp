@@ -37,7 +37,7 @@ private:
     int asteroid_creation_interval_ms = 500; // 1000ms (1 second)
 
     float angle;
-    int astroid_speed;
+    int astroid_speed = 7;
     std::string texture_path;
     int astroids_height;
     int astroids_width;

@@ -40,6 +40,11 @@ public:
     void PlayerMovments(float &deltaTime, SDL_Event &event);
     void cleanupBullets();
 
+    SDL_Rect get_player_rect();
+    void HitByAstroidHandler();
+ 
+    int health_num = 100;
+
 private:
     float angle;
     float bullet_angle;
@@ -47,10 +52,12 @@ private:
     int pos_x_clicked = 0;
     int pos_y_clicked = 0;
 
+    int player_alpha = 255;
     int player_speed = 200;
     int bullet_height = 40;
     int bullet_width = 40;
     int bullet_speed = 25;
+    int hit_health_value = 1;
 
     SDL_Texture *player_texture;
     SDL_Rect player_rect;
@@ -58,6 +65,9 @@ private:
 
     SDL_Texture *bt_texture = nullptr;
     SDL_Surface *bt_surface = nullptr;
+
+    SDL_Rect healt_border;
+    SDL_Rect health;
 };
 
 #endif

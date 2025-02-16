@@ -77,16 +77,23 @@ void Astroids::Draw(Player2D &player, Text &scoore, float &deltaTime, SDL_Render
 
     for (auto &asteroid_it : astroid_vector)
     {
+        if (Detections::isColiding(player.get_player_rect(), asteroid_it.astroid_rect))
+        {
+            if (player.health_num >= 1)
+            {
+                player.HitByAstroidHandler();
+            }
+        }
         if (asteroid_it.direction == "right")
         {
             asteroid_it.angle += 3;
-            asteroid_it.astroid_rect.x += 1;
+            asteroid_it.astroid_rect.x += astroid_speed;
             //   asteroid_it.astroid_rect.y += 1;
         }
         if (asteroid_it.direction == "left")
         {
             asteroid_it.angle -= 3;
-            asteroid_it.astroid_rect.x -= 1;
+            asteroid_it.astroid_rect.x -= astroid_speed;
             //     asteroid_it.astroid_rect.y -= 1;
         }
     }

@@ -48,6 +48,16 @@ Player2D::Player2D(int sprite_x, int sprite_y, int sprite_width, int sprite_heig
     {
         std::cerr << "[ERROR] Unable to create bullet texture: " << SDL_GetError() << std::endl;
     }
+
+    healt_border.x = 10;
+    healt_border.y = 35;
+    healt_border.h = 20;
+    healt_border.w = health_num + 4;
+
+    health.x = 12;
+    health.y = 37;
+    health.h = 15;
+    health.w = health_num;
 }
 
 Player2D::~Player2D()
@@ -83,6 +93,15 @@ void Player2D::Draw()
     {
         std::cerr << "[ERROR] SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
     }
+    SDL_Color health_color = {255,255,255,255};
+
+    SDL_SetRenderDrawColor(renderer,health_color.r, health_color.g, health_color.b, health_color.a);
+    SDL_RenderFillRect(renderer, &healt_border);
+
+
+    health.w = health_num;
+    SDL_SetRenderDrawColor(renderer,255, 0, 0, 255);
+    SDL_RenderFillRect(renderer, &health);
 }
 
 bool isUp = false;
@@ -114,19 +133,7 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime,  bool& isMainMe
 
     SDL_GetWindowSize(window, &window_width, &window_height);
 
-    // you have a task just make the texture follow you when moving
-    if (event.button.x >= player_rect.x && event.button.x <= player_rect.x + player_rect.w &&
-        event.button.y >= player_rect.y && event.button.y <= player_rect.y + player_rect.h)
-    {
-        if (SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
-        {
-            if (SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT)
-            {
-                player_rect.x = mouseX - (player_rect.w / 2);
-                player_rect.y = mouseY - (player_rect.h / 2);
-            }
-        }
-    }
+
 
     // let the sprite follow your mouse cursor only when the mouse is moving
     if (event.type == SDL_MOUSEMOTION)
@@ -256,4 +263,16 @@ void Player2D::PlayerMovments(float &deltaTime, SDL_Event &event)
             ++it; // Move to the next bullet if no removal happened
         }
     }
+}
+
+
+SDL_Rect Player2D::get_player_rect() {
+    return this->player_rect;
+}
+
+void Player2D::HitByAstroidHandler() {
+    health_num -= hit_health_value;
+
+    // just try to play opacity animation three times
+    SDL_SetTextureAlphaMod(player_texture, 128); // 50% opacity
 }

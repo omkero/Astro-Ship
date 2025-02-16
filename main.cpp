@@ -103,7 +103,6 @@ int main(int argc, char *argv[])
 
     SpaceBackground backgroundClass;
 
-    CircleRectShape circle;
     SDL_Color color = {255, 255, 255, 255};
     Astroids astr(0, 0, 80, 80, "assets/textures/space/astroid_gray.png", renderer);
 
@@ -161,10 +160,12 @@ int main(int argc, char *argv[])
             backgroundClass.Background();
             backgroundClass.EnableStarAnimation();
 
+            astr.Draw(player, scoore, deltaTime, renderer);
+
             player.Draw();
             player.PlayerMovments(deltaTime, event);
 
-            astr.Draw(player, scoore, deltaTime, renderer);
+ 
 
             scoore.Draw(renderer);
             btn.Draw(renderer);
