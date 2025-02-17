@@ -51,6 +51,8 @@ public:
 private:
     Mix_Music* fire_sound;
     Mix_Music* game_over_sound;
+    Mix_Music* ship_damage_sound;
+    
     float angle;
     float bullet_angle;
     const float PI = 3.14159265f;

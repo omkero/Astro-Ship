@@ -7,7 +7,7 @@ Text::Text(SDL_Renderer *renderer, int fontSize)
 {
     // load the font
 
-    text_font = TTF_OpenFont("assets/fonts/RobotoMedium.ttf", fontSize);
+    text_font = TTF_OpenFont("assets/fonts/RobotoMedium.ttf", 20);
     if (!text_font)
     {
         std::cerr << "Error cannot open or fin ttf file." << std::endl;

@@ -8,6 +8,7 @@
 #include <vector>
 #include "ui/Text.h"
 #include <mutex>
+#include <include/SDL_mixer.h>
 
 struct Astroid
 {
@@ -37,7 +38,8 @@ private:
     std::mutex asteroids_mutex;  // Mutex to protect shared resources
     std::chrono::steady_clock::time_point last_creation_time;
     int asteroid_creation_interval_ms = 500; // 1000ms (1 second)
-
+    Mix_Music* astroid_break_sound;
+    
     float angle;
     int astroid_speed = 7;
     std::string texture_path;

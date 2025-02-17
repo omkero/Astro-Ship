@@ -50,12 +50,12 @@ Player2D::Player2D(int sprite_x, int sprite_y, int sprite_width, int sprite_heig
     }
 
     healt_border.x = 10;
-    healt_border.y = 35;
-    healt_border.h = 20;
-    healt_border.w = health_num + 4;
+    healt_border.y = 44;
+    healt_border.h = 21;
+    healt_border.w = health_num + 9;
 
-    health.x = 12;
-    health.y = 37;
+    health.x = healt_border.x + 4;
+    health.y = healt_border.y + 3;
     health.h = 15;
     health.w = health_num;
 
@@ -66,6 +66,11 @@ Player2D::Player2D(int sprite_x, int sprite_y, int sprite_width, int sprite_heig
     }
     game_over_sound = Mix_LoadMUS("assets/sounds/game_over_arcade.mp3");
     if (!game_over_sound)
+    {
+        std::cerr << "Failed to load MP3! Mix_Error: " << Mix_GetError() << std::endl;
+    }
+    ship_damage_sound = Mix_LoadMUS("assets/sounds/ship_damage.mp3");
+    if (!ship_damage_sound)
     {
         std::cerr << "Failed to load MP3! Mix_Error: " << Mix_GetError() << std::endl;
     }
@@ -116,7 +121,7 @@ void Player2D::Draw(bool &isGameOver)
     if (health_num <= 1)
     {
         // Set volume (0 = mute, 128 = max, 64 = 50% volume)
-        Mix_VolumeMusic(120); // Set to 25% volume
+        Mix_VolumeMusic(120);              // Set to 25% volume
         Mix_PlayMusic(game_over_sound, 1); // -1 = loop indefinitely
 
         isGameOver = true;
@@ -214,10 +219,10 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime, bool &isMainMen
         SDL_Rect bullet_rect = {static_cast<int>(bullet_x_pos), static_cast<int>(bullet_y_pos), bullet_width, bullet_height};
         Bullet bt(bullet_rect, vx, vy, bt_texture, bt_surface);
 
-        // Set volume (0 = mute, 128 = max, 64 = 50% volume)
-        Mix_VolumeMusic(32); // Set to 25% volume
         // play sound here
-        Mix_PlayMusic(fire_sound, 1); // -1 = loop indefinitely
+        
+        Mix_VolumeMusic(32);
+        Mix_PlayMusic(fire_sound, 1); // -1 = loop indefinite
 
         // Add bullet to the vector
         bullets.push_back(bt);
@@ -301,14 +306,19 @@ SDL_Rect Player2D::get_player_rect()
 
 void Player2D::HitByAstroidHandler()
 {
-    // reduce texture alpgha (opacity) to 64
+    Mix_VolumeMusic(70);
+    Mix_PlayMusic(ship_damage_sound, 1); // -1 = loop indefinitely
+
     SDL_SetTextureAlphaMod(player_texture, 40);
+    // Set volume (0 = mute, 128 = max, 64 = 50% volume)
 
     std::thread([&]()
                 {
-                std::this_thread::sleep_for(std::chrono::microseconds(200));
-                SDL_SetTextureAlphaMod(player_texture, 255); })
+                    std::this_thread::sleep_for(std::chrono::microseconds(100));
+                    SDL_SetTextureAlphaMod(player_texture, 255); })
+
         .detach();
+
     if (this->health_num >= 1)
     {
         health_num -= hit_health_value;

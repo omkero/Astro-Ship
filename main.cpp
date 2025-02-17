@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
             }
 
             if (isGameOver) {
-                display.PlayAgainEventHandler(event, isGameOver, player, scoore /*, astr*/);
+                display.PlayAgainEventHandler(event, isGameOver, player, scoore , astr);
                 // Prevent further event processing if the main menu is active
                 continue;
             }
@@ -186,6 +186,7 @@ int main(int argc, char *argv[])
 
             scoore.Draw(renderer);
             btn.Draw(renderer);
+
             SDL_RenderPresent(renderer);
         }
 

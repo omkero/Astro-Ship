@@ -30,6 +30,12 @@ Astroids::Astroids(int astroids_x, int astroids_y, int ast_width,
     this->global_astroid_surface = IMG_Load(this->texture_path.c_str());
     this->global_astroid_texture = SDL_CreateTextureFromSurface(renderer, global_astroid_surface);
 
+    astroid_break_sound = Mix_LoadMUS("assets/sounds/mario_block_break_.mp3");
+    if (!astroid_break_sound)
+    {
+        std::cerr << "Failed to load MP3! Mix_Error: " << Mix_GetError() << std::endl;
+    }
+
     last_creation_time = std::chrono::steady_clock::now();
 };
 
@@ -111,6 +117,13 @@ void Astroids::Draw(Player2D &player, Text &scoore, float &deltaTime, SDL_Render
             if (Detections::isColiding(bullet_it->rect, asteroid_it->astroid_rect))
             {
 
+                // you can enable this sound if you want
+
+                /*
+                 Mix_VolumeMusic(150);
+                 Mix_PlayMusic(astroid_break_sound, 1);
+                */
+
                 // Remove the asteroid safely
                 asteroid_it = astroid_vector.erase(asteroid_it);
 
@@ -162,6 +175,7 @@ void Astroids::GenerateNewAstroid(int x, int y, std::string direction, SDL_Rende
     astroid_vector.push_back(payload);
 }
 
-void Astroids::ClearAstroids() {
+void Astroids::ClearAstroids()
+{
     this->astroid_vector.clear();
 }

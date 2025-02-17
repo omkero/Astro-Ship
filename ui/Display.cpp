@@ -53,10 +53,16 @@ Display::Display()
     {
         std::cerr << "renderer is null" << std::endl;
     }
-    int fontSize = 19;
+    
     SDL_Color textColor = {255, 255, 255};
     resumeFont = TTF_OpenFont("assets/fonts/RobotoMedium.ttf", fontSize);
     if (!resumeFont)
+    {
+        std::cerr << "Error: TTF_OpenFont failed: " << TTF_GetError() << std::endl;
+        return;
+    }
+    gameOverFont = TTF_OpenFont("assets/fonts/RubikMonoOneRegular.ttf", gameOverSize);
+    if (!gameOverFont)
     {
         std::cerr << "Error: TTF_OpenFont failed: " << TTF_GetError() << std::endl;
         return;
@@ -75,7 +81,7 @@ Display::Display()
         return;
     }
 
-    closeTextSurface = TTF_RenderText_Blended(resumeFont, "close", textColor);
+    closeTextSurface = TTF_RenderText_Blended(resumeFont, "Exit", textColor);
     if (!closeTextSurface)
     {
         std::cerr << "TTF_RenderText_Blended failed: " << TTF_GetError() << std::endl;
@@ -100,6 +106,20 @@ Display::Display()
     {
         std::cerr << "SDL_CreateTextureFromSurface failed: " << SDL_GetError() << std::endl;
         SDL_FreeSurface(playAgainTextSurface);
+        return;
+    }
+
+    gameOverTextSurface = TTF_RenderText_Blended(gameOverFont, "Game Is Over", textColor);
+    if (!gameOverTextSurface)
+    {
+        std::cerr << "TTF_RenderText_Blended failed: " << TTF_GetError() << std::endl;
+        return;
+    }
+    gameOverTextTexture = SDL_CreateTextureFromSurface(renderer, gameOverTextSurface);
+    if (!playAgainTextTexture)
+    {
+        std::cerr << "SDL_CreateTextureFromSurface failed: " << SDL_GetError() << std::endl;
+        SDL_FreeSurface(gameOverTextSurface);
         return;
     }
 };
@@ -261,8 +281,21 @@ void Display::DrawGameOverMenu(SDL_Event &event, bool &isGameOver)
     textRect2.x = buttonClose.x + (buttonClose.w / 2) - (textRect2.w / 2); // Horizontal centering
     textRect2.y = buttonClose.y + (buttonClose.h / 2) - (textRect2.h / 2); // Vertical centering
 
+    SDL_Rect gameOverText;
+    gameOverText.h = gameOverTextSurface->h;
+    gameOverText.w = gameOverTextSurface->w;
+    gameOverText.x = (window_width / 2) - (gameOverTextSurface->w / 2); // Vertical centering; // Horizontal centering
+    gameOverText.y = 150;
+
     SDL_SetRenderDrawColor(renderer, 46, 46, 46, 255); // RGBA (Alpha 180 for transparency)
     SDL_RenderFillRect(renderer, &main_menu);
+
+    {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // RGBA (Alpha 180 for transparency)
+     //   SDL_RenderFillRect(renderer, &gameOverText);
+
+        SDL_RenderCopy(renderer, gameOverTextTexture, NULL, &gameOverText);
+    }
 
     {
         SDL_SetRenderDrawColor(renderer, 94, 94, 94, buttonPlayAgainAlpha); // RGBA (Alpha 180 for transparency)
@@ -295,13 +328,13 @@ void Display::MainMenuEventHandler(SDL_Event &event, bool &isMainMenu)
                     SDL_Quit();
                     exit(0); });
 }
-void Display::PlayAgainEventHandler(SDL_Event &event, bool &isGameOver, Player2D &player, Text &text) // , Astroids &astroids
+void Display::PlayAgainEventHandler(SDL_Event &event, bool &isGameOver, Player2D &player, Text &text, Astroids &astroids) // , Astroids &astroids
 {
     HandleClick(buttonPlayAgain, event, this->buttonPlayAgainAlpha, [&]()
                 { 
                     // play again handler
                     player.health_num = 100;
-                  //  astroids.ClearAstroids();
+                    astroids.ClearAstroids();
                     text.ResetTextNum();
                     player.CenterPlayerPos();
                     isGameOver = false; });
