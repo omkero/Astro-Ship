@@ -8,6 +8,7 @@
 #include <vector>
 #include "core/renderer/Renderer.hpp"
 #include <chrono>
+#include <include/SDL_mixer.h>
 
 struct Bullet
 {
@@ -36,10 +37,11 @@ public:
              int sprite_height, std::string texture_asset_path);
     ~Player2D();
     std::vector<Bullet> bullets;
-    void Draw();
+    void Draw(bool &isGameOver);
     void player_events(SDL_Event &event, float &deltaTime, bool& isMainMenu);
     void PlayerMovments(float &deltaTime, SDL_Event &event);
     void cleanupBullets();
+    void CenterPlayerPos();
 
     SDL_Rect get_player_rect();
     void HitByAstroidHandler();
@@ -47,6 +49,8 @@ public:
     int health_num = 100;
 
 private:
+    Mix_Music* fire_sound;
+    Mix_Music* game_over_sound;
     float angle;
     float bullet_angle;
     const float PI = 3.14159265f;

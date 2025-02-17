@@ -5,6 +5,8 @@
 #include "Button.h"
 #include "include/SDL_ttf.h"
 #include <functional>
+#include <cstdlib>
+#include "objects/enemy/astroids.hpp"
 
 void ReduceButtonOpacity(SDL_Rect &rect, SDL_Renderer *renderer, int &alpha);
 void ResetButtonOpacity(SDL_Rect &rect, SDL_Renderer *renderer, int &alpha);
@@ -84,6 +86,20 @@ Display::Display()
     {
         std::cerr << "SDL_CreateTextureFromSurface failed: " << SDL_GetError() << std::endl;
         SDL_FreeSurface(closeTextSurface);
+        return;
+    }
+
+    playAgainTextSurface = TTF_RenderText_Blended(resumeFont, "Play Again", textColor);
+    if (!playAgainTextSurface)
+    {
+        std::cerr << "TTF_RenderText_Blended failed: " << TTF_GetError() << std::endl;
+        return;
+    }
+    playAgainTextTexture = SDL_CreateTextureFromSurface(renderer, playAgainTextSurface);
+    if (!playAgainTextTexture)
+    {
+        std::cerr << "SDL_CreateTextureFromSurface failed: " << SDL_GetError() << std::endl;
+        SDL_FreeSurface(playAgainTextSurface);
         return;
     }
 };
@@ -191,18 +207,109 @@ void Display::DrawMainMenu(SDL_Event &event, bool &isMainMenu)
     }
 }
 
+void Display::DrawGameOverMenu(SDL_Event &event, bool &isGameOver)
+{
+    int window_width;
+    int window_height;
+    bool activeAnimation = false;
+    int fontSize = 19;
+    SDL_Color textColor = {255, 255, 255};
+
+    SDL_Window *window = Window::get_window();
+    if (!window)
+    {
+        std::cerr << "Error: Window is null" << std::endl;
+    }
+    SDL_GetWindowSize(window, &window_width, &window_height);
+    SDL_Renderer *renderer = Renderer::get_renderer();
+    if (!renderer)
+    {
+        std::cerr << "renderer is null" << std::endl;
+    }
+
+    // draw background here
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND); // Enable blending mode
+    SDL_Rect main_menu;
+    main_menu.h = window_height;
+    main_menu.w = window_width;
+    main_menu.x = 0;
+    main_menu.y = 0;
+
+    int pause_btn_height = 50;
+    int pause_btn_width = 200;
+
+    buttonPlayAgain.h = pause_btn_height;
+    buttonPlayAgain.w = pause_btn_width;
+    buttonPlayAgain.x = (window_width / 2) - (pause_btn_width / 2);
+    buttonPlayAgain.y = (window_height / 2) - (pause_btn_height + pause_btn_height / 2);
+
+    buttonClose.h = pause_btn_height;
+    buttonClose.w = pause_btn_width;
+    buttonClose.x = (window_width / 2) - (pause_btn_width / 2);
+    buttonClose.y = (window_height / 2) + pause_btn_height / 2;
+
+    // Create the rectangle for text positioning
+    SDL_Rect textRect;
+    textRect.h = playAgainTextSurface->h;
+    textRect.w = playAgainTextSurface->w;
+    textRect.x = buttonPlayAgain.x + (buttonPlayAgain.w / 2) - (textRect.w / 2); // Horizontal centering
+    textRect.y = buttonPlayAgain.y + (buttonPlayAgain.h / 2) - (textRect.h / 2); // Vertical centering
+
+    SDL_Rect textRect2;
+    textRect2.h = closeTextSurface->h;
+    textRect2.w = closeTextSurface->w;
+    textRect2.x = buttonClose.x + (buttonClose.w / 2) - (textRect2.w / 2); // Horizontal centering
+    textRect2.y = buttonClose.y + (buttonClose.h / 2) - (textRect2.h / 2); // Vertical centering
+
+    SDL_SetRenderDrawColor(renderer, 46, 46, 46, 255); // RGBA (Alpha 180 for transparency)
+    SDL_RenderFillRect(renderer, &main_menu);
+
+    {
+        SDL_SetRenderDrawColor(renderer, 94, 94, 94, buttonPlayAgainAlpha); // RGBA (Alpha 180 for transparency)
+        SDL_RenderFillRect(renderer, &buttonPlayAgain);
+
+        SDL_SetRenderDrawColor(renderer, 94, 94, 94, 0); // RGBA (Alpha 180 for transparency)
+        SDL_RenderFillRect(renderer, &textRect);
+
+        SDL_RenderCopy(renderer, playAgainTextTexture, NULL, &textRect);
+    }
+
+    {
+        SDL_SetRenderDrawColor(renderer, 94, 94, 94, buttonCloseAlpha); // RGBA (Alpha 180 for transparency)
+        SDL_RenderFillRect(renderer, &buttonClose);
+
+        SDL_SetRenderDrawColor(renderer, 94, 94, 94, 0); // RGBA (Alpha 180 for transparency)
+        SDL_RenderFillRect(renderer, &textRect2);
+
+        SDL_RenderCopy(renderer, closeTextTexture, NULL, &textRect2);
+    }
+}
+
 void Display::MainMenuEventHandler(SDL_Event &event, bool &isMainMenu)
 {
     HandleClick(buttonPause, event, buttonPauseAlpha, [&]()
-                { 
-                    isMainMenu = false;
-                 });
+                { isMainMenu = false; });
     HandleClick(buttonClose, event, buttonCloseAlpha, [&]()
                 { 
                     // quit the game
                     SDL_Quit();
-                    exit(0);
-                });
+                    exit(0); });
+}
+void Display::PlayAgainEventHandler(SDL_Event &event, bool &isGameOver, Player2D &player, Text &text) // , Astroids &astroids
+{
+    HandleClick(buttonPlayAgain, event, this->buttonPlayAgainAlpha, [&]()
+                { 
+                    // play again handler
+                    player.health_num = 100;
+                  //  astroids.ClearAstroids();
+                    text.ResetTextNum();
+                    player.CenterPlayerPos();
+                    isGameOver = false; });
+    HandleClick(buttonClose, event, buttonCloseAlpha, [&]()
+                { 
+                    // quit the game
+                    SDL_Quit();
+                    exit(0); });
 }
 
 void ReduceButtonOpacity(SDL_Rect &rect, SDL_Renderer *renderer, int &alpha)

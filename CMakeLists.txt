@@ -43,6 +43,7 @@ if(WIN32)
         ${CMAKE_SOURCE_DIR}/lib/x64/SDL2_image.lib     # Include SDL2main for static linking
         ${CMAKE_SOURCE_DIR}/lib/x64/SDL2_ttf.lib     # Include SDL2main for static linking
         ${CMAKE_SOURCE_DIR}/lib/x64/glew32.lib
+        ${CMAKE_SOURCE_DIR}/lib/x64/SDL2_mixer.lib
         winmm                       # Windows Multimedia API
         imm32                       # Input Method Manager
         version                     # Version API
@@ -70,6 +71,7 @@ else()  # If not Windows, assume it's Linux
         SDL2      # Link SDL2 (find_package should already handle this)
         SDL2main  # Link SDL2main
         SDL2_image
+        SDL2_mixer
         SDL2_ttf        # Link SDL2_ttf (ensure you have the appropriate SDL2_ttf package installed)
       # OpenGL::GL      # Link OpenGL (find_package should handle this)   # Link GLEW if you're using it (you may need to adjust based on how GLEW is set up)
         m                # Link math library

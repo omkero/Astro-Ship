@@ -2,6 +2,7 @@
 
 #include <include/SDL.h>
 #include <include/SDL_ttf.h>
+#include <include/SDL_mixer.h>
 #include <include/SDL_image.h>
 #include <iostream>
 #include <vector>
@@ -23,7 +24,6 @@
 #ifdef _WIN32
 #include <Windows.h>
 #endif
-
 
 // int main(int argc, char *argv[]) for console
 
@@ -47,6 +47,13 @@ int main(int argc, char *argv[])
     {
         std::cerr << "SDL_INIT_VIDEO could not be initialized! SDL_Error " << std::endl;
         SDL_Quit();
+        return -1;
+    }
+
+    // Initialize SDL_mixer with format and channels
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+    {
+        std::cerr << "Mix_OpenAudio Error: " << Mix_GetError() << std::endl;
         return -1;
     }
 
@@ -90,7 +97,7 @@ int main(int argc, char *argv[])
     int btnHeight = 30;
     int btnWidth = 50;
 
-    Display disp;
+    Display display;
 
     Text scoore(renderer, 14);
     scoore.SetTextPos(10, 10);
@@ -133,9 +140,14 @@ int main(int argc, char *argv[])
                 isMainMenu = !isMainMenu;
             }
 
+            if (isGameOver) {
+                display.PlayAgainEventHandler(event, isGameOver, player, scoore /*, astr*/);
+                // Prevent further event processing if the main menu is active
+                continue;
+            }
             if (isMainMenu)
             {
-                disp.MainMenuEventHandler(event, isMainMenu);
+                display.MainMenuEventHandler(event, isMainMenu);
 
                 // Prevent further event processing if the main menu is active
                 continue;
@@ -154,7 +166,12 @@ int main(int argc, char *argv[])
 
         if (isMainMenu)
         {
-            disp.DrawMainMenu(event, isMainMenu);
+            display.DrawMainMenu(event, isMainMenu);
+            SDL_RenderPresent(renderer);
+        }
+        else if (isGameOver)
+        {
+            display.DrawGameOverMenu(event, isMainMenu);
             SDL_RenderPresent(renderer);
         }
         else
@@ -164,7 +181,7 @@ int main(int argc, char *argv[])
 
             astr.Draw(player, scoore, deltaTime, renderer);
 
-            player.Draw();
+            player.Draw(isGameOver);
             player.PlayerMovments(deltaTime, event);
 
             scoore.Draw(renderer);
@@ -180,6 +197,7 @@ int main(int argc, char *argv[])
         }
     }
 
+    Mix_CloseAudio();
     btn.ButtonCleanUp();
     SDL_Quit();
     return 0;

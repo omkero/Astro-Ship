@@ -80,6 +80,34 @@ void Text::IncTextNum()
 {
     this->text_num += 1;
 }
+void Text::ResetTextNum()
+{
+    SDL_Renderer *renderer = Renderer::get_renderer();
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null, Error from Sprite.cpp" << std::endl;
+    }
+    
+    this->text_num = 0;
+
+    SDL_Color white = {255, 255, 255};
+    text_surface = TTF_RenderText_Blended(text_font, std::to_string(this->text_num).c_str(), white);
+    if (!text_surface)
+    {
+        std::cerr << "Error cannot init text_surface" << std::endl;
+        throw std::runtime_error("Error cannot init text_surface");
+        return;
+    }
+
+    text_texture = SDL_CreateTextureFromSurface(renderer, text_surface);
+    if (!text_surface)
+    {
+        std::cerr << "Error cannot init text_texture" << std::endl;
+        throw std::runtime_error("Error cannot init text_texture");
+        SDL_FreeSurface(text_surface);
+        return;
+    }
+}
 
 void Text::ReCreateText(SDL_Renderer *renderer)
 {

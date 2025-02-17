@@ -29,6 +29,8 @@ public:
     void Draw(Player2D &player, Text& scoore, float& deltaTime, SDL_Renderer* renderer);
     void AstroidsMovments(float &deltaTime, SDL_Event &event);
     void GenerateNewAstroid(int x, int y, std::string direction, SDL_Renderer* renderer);
+    void ClearAstroids();
+    
 private:
     std::vector<Astroid> astroid_vector;
 

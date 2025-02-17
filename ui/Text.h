@@ -14,10 +14,11 @@ class Text {
     void ReCreateText(SDL_Renderer *renderer);
     void SetTextPos(int x, int y);
     void IncTextNum();
+    void ResetTextNum();
     
     private:
     SDL_Rect text_rect;
-    int text_num = 20;
+    int text_num = 0;
     SDL_Surface *text_surface;
     SDL_Texture *text_texture;
     TTF_Font *text_font;

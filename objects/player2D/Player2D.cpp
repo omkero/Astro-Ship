@@ -59,11 +59,28 @@ Player2D::Player2D(int sprite_x, int sprite_y, int sprite_width, int sprite_heig
     health.h = 15;
     health.w = health_num;
 
+    fire_sound = Mix_LoadMUS("assets/sounds/laser_gun.mp3");
+    if (!fire_sound)
+    {
+        std::cerr << "Failed to load MP3! Mix_Error: " << Mix_GetError() << std::endl;
+    }
+    game_over_sound = Mix_LoadMUS("assets/sounds/game_over_arcade.mp3");
+    if (!game_over_sound)
+    {
+        std::cerr << "Failed to load MP3! Mix_Error: " << Mix_GetError() << std::endl;
+    }
+
     last_creation_time = std::chrono::steady_clock::now();
 }
 
 Player2D::~Player2D()
 {
+    if (fire_sound)
+    {
+        // Clean up resources
+        Mix_FreeMusic(fire_sound);
+        Mix_CloseAudio();
+    }
     if (player_texture)
     {
         SDL_DestroyTexture(player_texture);
@@ -83,7 +100,7 @@ Player2D::~Player2D()
     // No need to delete player_rect, it's automatically cleaned up when the object is destroyed
 }
 
-void Player2D::Draw()
+void Player2D::Draw(bool &isGameOver)
 {
     SDL_Renderer *renderer = Renderer::get_renderer();
     if (!renderer)
@@ -96,6 +113,14 @@ void Player2D::Draw()
         std::cerr << "[ERROR] SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
     }
     SDL_Color health_color = {255, 255, 255, 255};
+    if (health_num <= 1)
+    {
+        // Set volume (0 = mute, 128 = max, 64 = 50% volume)
+        Mix_VolumeMusic(120); // Set to 25% volume
+        Mix_PlayMusic(game_over_sound, 1); // -1 = loop indefinitely
+
+        isGameOver = true;
+    }
 
     SDL_SetRenderDrawColor(renderer, health_color.r, health_color.g, health_color.b, health_color.a);
     SDL_RenderFillRect(renderer, &healt_border);
@@ -189,6 +214,11 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime, bool &isMainMen
         SDL_Rect bullet_rect = {static_cast<int>(bullet_x_pos), static_cast<int>(bullet_y_pos), bullet_width, bullet_height};
         Bullet bt(bullet_rect, vx, vy, bt_texture, bt_surface);
 
+        // Set volume (0 = mute, 128 = max, 64 = 50% volume)
+        Mix_VolumeMusic(32); // Set to 25% volume
+        // play sound here
+        Mix_PlayMusic(fire_sound, 1); // -1 = loop indefinitely
+
         // Add bullet to the vector
         bullets.push_back(bt);
     }
@@ -271,17 +301,36 @@ SDL_Rect Player2D::get_player_rect()
 
 void Player2D::HitByAstroidHandler()
 {
+    // reduce texture alpgha (opacity) to 64
+    SDL_SetTextureAlphaMod(player_texture, 40);
+
+    std::thread([&]()
+                {
+                std::this_thread::sleep_for(std::chrono::microseconds(200));
+                SDL_SetTextureAlphaMod(player_texture, 255); })
+        .detach();
     if (this->health_num >= 1)
     {
         health_num -= hit_health_value;
-
-        // reduce texture alpgha (opacity) to 64
-        SDL_SetTextureAlphaMod(player_texture, 40);
-
-        std::thread([&]()
-                    {
-            std::this_thread::sleep_for(std::chrono::microseconds(200));
-            SDL_SetTextureAlphaMod(player_texture, 255); })
-            .detach();
     }
+}
+
+void Player2D::CenterPlayerPos()
+{
+    SDL_Window *window = Window::get_window();
+    if (!window)
+    {
+        std::cerr << "Window is null!" << std::endl;
+        SDL_Quit();
+    }
+
+    int resize_win_width;
+    int resize_win_height;
+
+    SDL_GetWindowSize(window, &resize_win_width, &resize_win_height);
+
+    // (resize_win_width / 2) - 35,
+
+    player_rect.x = (resize_win_width / 2) - (player_rect.w / 2);
+    player_rect.y = (resize_win_height / 2) - (player_rect.h / 2);
 }

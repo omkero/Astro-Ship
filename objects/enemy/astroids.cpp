@@ -161,3 +161,7 @@ void Astroids::GenerateNewAstroid(int x, int y, std::string direction, SDL_Rende
 
     astroid_vector.push_back(payload);
 }
+
+void Astroids::ClearAstroids() {
+    this->astroid_vector.clear();
+}

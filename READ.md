@@ -14,7 +14,7 @@ for linux you have to install this libraries
 !! required !!
 
 # Install SDL2 and SDL2_ttf
-sudo apt-get install libsdl2-dev libsdl2-ttf-dev
+sudo apt-get install libsdl2-dev libsdl2-ttf-dev libsdl2-mixer-dev
 
 # Install SDL2_image
 sudo apt-get install libsdl2-image-dev
