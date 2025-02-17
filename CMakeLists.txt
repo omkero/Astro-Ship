@@ -8,22 +8,46 @@ set(SDL2_DIR ${CMAKE_SOURCE_DIR}/cmake)
 set(SDL2_STATIC ON)
 set(SDL2_LIBRARIES ${SDL2_LIBRARY} SDL2main SDL2-static SDL2_ttf-static)
 
-# Add executable binaries (.cpp files)
-add_executable(${PROJECT_NAME} 
-    main.cpp 
-    ui/Button.cpp 
-    ui/Text.cpp 
-    ui/Display.cpp
-    objects/Sprite.cpp
-    objects/enemy/astroids.cpp
-    objects/Shapes/CircleRectShape.cpp
-    objects/Shapes/RectangleShape.cpp
-    objects/player2D/Player2D.cpp
-    core/window/Window.cpp
-    core/renderer/Renderer.cpp
-    core/physics/detections.cpp
-    maps/SpaceBackground.cpp
-)
+if (WIN32)
+    set(RESOURCE_FILE ${CMAKE_SOURCE_DIR}/icon.rc)
+
+    # Add executable binaries (.cpp files)
+    add_executable(${PROJECT_NAME} 
+        main.cpp 
+        ui/Button.cpp 
+        ui/Text.cpp 
+        ui/Display.cpp
+        objects/Sprite.cpp
+        objects/enemy/astroids.cpp
+        objects/Shapes/CircleRectShape.cpp
+        objects/Shapes/RectangleShape.cpp
+        objects/player2D/Player2D.cpp
+        core/window/Window.cpp
+        core/renderer/Renderer.cpp
+        core/physics/detections.cpp
+        maps/SpaceBackground.cpp
+        ${RESOURCE_FILE}
+    )
+else()
+    # Add executable binaries (.cpp files)
+    add_executable(${PROJECT_NAME} 
+        main.cpp 
+        ui/Button.cpp 
+        ui/Text.cpp 
+        ui/Display.cpp
+        objects/Sprite.cpp
+        objects/enemy/astroids.cpp
+        objects/Shapes/CircleRectShape.cpp
+        objects/Shapes/RectangleShape.cpp
+        objects/player2D/Player2D.cpp
+        core/window/Window.cpp
+        core/renderer/Renderer.cpp
+        core/physics/detections.cpp
+        maps/SpaceBackground.cpp
+    )
+endif()
+
+
 
 # On Linux, ensure SDL2 is found
 if(NOT WIN32)
@@ -34,7 +58,7 @@ endif()
 # Link SDL2 and other libraries
 if(WIN32)
     # On Windows, set the resource files
-    set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/icon.rc)
+  
 
     # Link libraries for Windows
     target_link_libraries(${PROJECT_NAME} 
@@ -52,11 +76,12 @@ if(WIN32)
         user32                      # User32 library for window management
         kernel32
         opengl32                    # Kernel32 library for basic application functionality
+
     )
 
     # Set WIN32 flag for GUI app (to prevent console)
     set_target_properties(${PROJECT_NAME} PROPERTIES
-        WIN32_EXECUTABLE FALSE   # Ensure it's treated as a GUI app
+        WIN32_EXECUTABLE TRUE   # Ensure it's treated as a GUI app
     )
 
     # Ensure that SDL2 is linked statically
@@ -93,7 +118,3 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     SDL_MAIN_HANDLED
     SDL_STATIC
 )
-
-if(WIN32)
-    set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/icon.rc)
-endif()

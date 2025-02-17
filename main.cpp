@@ -28,7 +28,8 @@
 // int main(int argc, char *argv[]) for console
 
 // int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
-int main(int argc, char *argv[])
+
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
     {
@@ -133,7 +134,8 @@ int main(int argc, char *argv[])
         {
             if (event.type == SDL_QUIT)
             {
-                quit = false;
+                SDL_Quit();
+                exit(0);
             }
             if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)
             {

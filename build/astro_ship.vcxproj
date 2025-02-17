@@ -125,7 +125,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/zurd/Desktop/Zurus/build/Debug/astro_ship.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/zurd/Desktop/Zurus/build/Debug/astro_ship.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -173,7 +173,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/zurd/Desktop/Zurus/build/Release/astro_ship.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/zurd/Desktop/Zurus/build/Release/astro_ship.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -221,7 +221,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/zurd/Desktop/Zurus/build/MinSizeRel/astro_ship.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/zurd/Desktop/Zurus/build/MinSizeRel/astro_ship.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -268,7 +268,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/zurd/Desktop/Zurus/build/RelWithDebInfo/astro_ship.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/zurd/Desktop/Zurus/build/RelWithDebInfo/astro_ship.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -345,6 +345,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\zurd\Desktop\Zurus\core\renderer\Renderer.cpp" />
     <ClCompile Include="C:\Users\zurd\Desktop\Zurus\core\physics\detections.cpp" />
     <ClCompile Include="C:\Users\zurd\Desktop\Zurus\maps\SpaceBackground.cpp" />
+    <ResourceCompile Include="C:\Users\zurd\Desktop\Zurus\icon.rc" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
