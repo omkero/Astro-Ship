@@ -13,8 +13,9 @@ class Text {
     void Draw(SDL_Renderer *renderer);
     void ReCreateText(SDL_Renderer *renderer);
     void SetTextPos(int x, int y);
-    void IncTextNum();
+    void IncTextNum(int num);
     void ResetTextNum();
+    int  GetTextNum();
     
     private:
     SDL_Rect text_rect;

@@ -30,7 +30,10 @@ public:
     void Draw(Player2D &player, Text& scoore, float& deltaTime, SDL_Renderer* renderer);
     void AstroidsMovments(float &deltaTime, SDL_Event &event);
     void GenerateNewAstroid(int x, int y, std::string direction, SDL_Renderer* renderer);
+    void LevelConfiguration(Text& scoore, SDL_Renderer *renderer);
     void ClearAstroids();
+    void SetAstroidCreationInterval(int num);
+    void SetAstroidSpeed(int num);
     
 private:
     std::vector<Astroid> astroid_vector;
@@ -41,7 +44,7 @@ private:
     Mix_Music* astroid_break_sound;
     
     float angle;
-    int astroid_speed = 7;
+    int astroid_speed = 2;
     std::string texture_path;
     int astroids_height;
     int astroids_width;

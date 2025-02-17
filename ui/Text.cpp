@@ -76,9 +76,9 @@ void Text::SetTextPos(int x, int y)
     text_rect.y = y;
 }
 
-void Text::IncTextNum()
+void Text::IncTextNum(int num)
 {
-    this->text_num += 1;
+    this->text_num += num;
 }
 void Text::ResetTextNum()
 {
@@ -142,4 +142,8 @@ void Text::ReCreateText(SDL_Renderer *renderer)
         SDL_FreeSurface(text_surface);
         return;
     }
+}
+
+int Text::GetTextNum() {
+    return this->text_num;
 }

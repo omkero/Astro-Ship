@@ -220,8 +220,8 @@ void Player2D::player_events(SDL_Event &event, float &deltaTime, bool &isMainMen
         Bullet bt(bullet_rect, vx, vy, bt_texture, bt_surface);
 
         // play sound here
-        
-        Mix_VolumeMusic(32);
+
+        Mix_VolumeMusic(10);
         Mix_PlayMusic(fire_sound, 1); // -1 = loop indefinite
 
         // Add bullet to the vector
@@ -249,20 +249,40 @@ void Player2D::PlayerMovments(float &deltaTime, SDL_Event &event)
 
     // Smooth movement using SDL_GetKeyboardState
     const Uint8 *state = SDL_GetKeyboardState(NULL);
+
     if (state[SDL_SCANCODE_UP])
     {
+        if (player_rect.y <= 0)
+        {
+            player_rect.y = 0;
+        }
         player_rect.y -= deltaTime * player_speed;
     }
     if (state[SDL_SCANCODE_DOWN])
     {
+        if (player_rect.y >= window_height - player_rect.h)
+        {
+            player_rect.y = window_height - player_rect.h;
+        }
         player_rect.y += deltaTime * player_speed;
     }
     if (state[SDL_SCANCODE_RIGHT])
     {
-        player_rect.x += deltaTime * player_speed;
+        if (player_rect.x >= window_width - player_rect.w)
+        {
+            player_rect.x = window_width - player_rect.w;
+        }
+        else
+        {
+            player_rect.x += deltaTime * player_speed;
+        }
     }
     if (state[SDL_SCANCODE_LEFT])
     {
+        if (player_rect.x <= 0)
+        {
+            player_rect.x = 0;
+        }
         player_rect.x -= deltaTime * player_speed;
     }
 
@@ -306,7 +326,7 @@ SDL_Rect Player2D::get_player_rect()
 
 void Player2D::HitByAstroidHandler()
 {
-    Mix_VolumeMusic(70);
+    Mix_VolumeMusic(15);
     Mix_PlayMusic(ship_damage_sound, 1); // -1 = loop indefinitely
 
     SDL_SetTextureAlphaMod(player_texture, 40);

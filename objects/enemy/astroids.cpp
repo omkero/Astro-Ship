@@ -69,10 +69,7 @@ void Astroids::Draw(Player2D &player, Text &scoore, float &deltaTime, SDL_Render
         int window_height;
 
         SDL_GetWindowSize(window, &window_width, &window_height);
-        // Create a new asteroid after the specified interval
-        GenerateNewAstroid(window_width, rand() % 800, "left", renderer);
-        GenerateNewAstroid(0 - astroids_width, rand() % 800, "right", renderer);
-
+        LevelConfiguration(scoore, renderer);
         last_creation_time = current_time; // Reset the timer
     }
 
@@ -131,7 +128,7 @@ void Astroids::Draw(Player2D &player, Text &scoore, float &deltaTime, SDL_Render
                 bullet_it = player.bullets.erase(bullet_it);
                 bullet_removed = true;
 
-                scoore.IncTextNum();
+                scoore.IncTextNum(1);
                 scoore.ReCreateText(renderer);
                 break; // Exit asteroid loop as bullet is removed
             }
@@ -178,4 +175,79 @@ void Astroids::GenerateNewAstroid(int x, int y, std::string direction, SDL_Rende
 void Astroids::ClearAstroids()
 {
     this->astroid_vector.clear();
+}
+
+void Astroids::LevelConfiguration(Text &scoore, SDL_Renderer *renderer)
+{
+    int window_width;
+    int window_height;
+
+    SDL_GetWindowSize(window, &window_width, &window_height);
+    if (scoore.GetTextNum() >= 50) {
+        astroid_speed = 3;
+    }
+
+    if (scoore.GetTextNum() >= 100) {
+        astroid_speed = 4;
+    }
+
+    if (scoore.GetTextNum() >= 150) {
+        astroid_speed = 5;
+    }
+
+    if (scoore.GetTextNum() >= 200) {
+        asteroid_creation_interval_ms = 450;
+    }
+
+    if (scoore.GetTextNum() >= 270) {
+        asteroid_creation_interval_ms = 400;
+    }
+
+    if (scoore.GetTextNum() >= 370) {
+        astroid_speed = 6;
+    }
+
+    if (scoore.GetTextNum() >= 410) {
+        asteroid_creation_interval_ms = 350;
+    }
+
+    if (scoore.GetTextNum() >= 525) {
+        asteroid_creation_interval_ms = 300;
+        astroid_speed = 7;
+    }
+
+    if (scoore.GetTextNum() >= 595) {
+        asteroid_creation_interval_ms = 280;
+
+    }
+
+    if (scoore.GetTextNum() >= 680) {
+        asteroid_creation_interval_ms = 270;
+    }
+
+    if (scoore.GetTextNum() >= 780) {
+        asteroid_creation_interval_ms = 270;
+        astroid_speed = 8;
+    }
+
+    if (scoore.GetTextNum() >= 1100) {
+        asteroid_creation_interval_ms = 250;
+        astroid_speed = 9;
+    }
+
+    if (scoore.GetTextNum() >= 2005) {
+        astroid_speed = 10;
+    }
+
+    // Create a new asteroid after the specified interval
+    GenerateNewAstroid(window_width, rand() % 800, "left", renderer);
+    GenerateNewAstroid(0 - astroids_width, rand() % 800, "right", renderer);
+}
+
+void Astroids::SetAstroidCreationInterval(int num) {
+    this->asteroid_creation_interval_ms = num;
+}
+
+void Astroids::SetAstroidSpeed(int num) {
+    this->astroid_speed = num;
 }

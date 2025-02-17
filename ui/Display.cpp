@@ -53,7 +53,7 @@ Display::Display()
     {
         std::cerr << "renderer is null" << std::endl;
     }
-    
+
     SDL_Color textColor = {255, 255, 255};
     resumeFont = TTF_OpenFont("assets/fonts/RobotoMedium.ttf", fontSize);
     if (!resumeFont)
@@ -292,7 +292,7 @@ void Display::DrawGameOverMenu(SDL_Event &event, bool &isGameOver)
 
     {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // RGBA (Alpha 180 for transparency)
-     //   SDL_RenderFillRect(renderer, &gameOverText);
+                                                              //   SDL_RenderFillRect(renderer, &gameOverText);
 
         SDL_RenderCopy(renderer, gameOverTextTexture, NULL, &gameOverText);
     }
@@ -332,11 +332,18 @@ void Display::PlayAgainEventHandler(SDL_Event &event, bool &isGameOver, Player2D
 {
     HandleClick(buttonPlayAgain, event, this->buttonPlayAgainAlpha, [&]()
                 { 
-                    // play again handler
+                    // reset player
                     player.health_num = 100;
-                    astroids.ClearAstroids();
-                    text.ResetTextNum();
                     player.CenterPlayerPos();
+
+                    // reset and change astroid config
+                    astroids.ClearAstroids();
+                    astroids.SetAstroidCreationInterval(500);
+                    astroids.SetAstroidSpeed(3);
+
+                    // scoore must be 0
+                    text.ResetTextNum();
+
                     isGameOver = false; });
     HandleClick(buttonClose, event, buttonCloseAlpha, [&]()
                 { 
