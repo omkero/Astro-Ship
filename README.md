@@ -1,4 +1,4 @@
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)]([https://opensource.org/licenses/](https://opensource.org/license/gpl-3-0](https://opensource.org/license/gpl-3-0))
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/license/gpl-3-0)
 
 
 
